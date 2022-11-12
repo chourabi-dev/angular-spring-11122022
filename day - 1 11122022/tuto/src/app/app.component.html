@@ -1,0 +1,54 @@
+<h1>
+  {{ title }}
+</h1>
+
+<p>
+  year : {{ year }}
+</p>
+
+<p>
+  success : {{ success }}
+</p>
+
+<p>
+  today : {{ today }}
+</p>
+
+
+<p>
+  employees {{ employees }}
+</p>
+
+<p>
+  employee {{ employee.name }}  {{ employee.email }}
+</p>
+
+
+<h3>Employess List:</h3>
+
+<ul>
+
+
+  <li   *ngFor="let e of employees; let i = index;"  >{{ e }} {{ i }}</li>
+
+</ul>
+
+
+
+<ul>
+   <li *ngFor="let w of workers">
+
+      <span *ngIf=" w.year <= 2015 " class="old-employee">
+        {{ w.fullname }}
+      </span>
+
+      <span *ngIf=" w.year > 2015 " class="new-employee">
+        {{ w.fullname }}
+      </span>
+
+    
+    
+      {{ w.email }}   {{ w.year }} 
+
+   </li>
+</ul>
