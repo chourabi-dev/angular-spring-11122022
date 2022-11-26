@@ -64,12 +64,53 @@ export class AppComponent {
   }
 */
 
+/*
+x = 0;
+
+y= 0;
 
 
 
 mouseIsMoving(e:MouseEvent){
   console.log(e.clientX,e.clientY);
   
+  this.x = e.clientX - 40;
+  this.y = e.clientY  - 40;
+  
+
+}
+*/
+
+
+
+items = [];
+
+typing(e){
+  console.log("typing...");
+  
+  console.log(e);
+
+
+  if (e.code === 'Enter') {
+    const val = e.target.value;
+
+    console.log(val);
+    
+
+    this.items.push(  { item: val, createdAt: new Date() }  )
+
+
+    e.target.value="";
+  }
+  
+}
+
+
+deleteItem(i){
+console.log(i);
+
+this.items.splice(i,1)
+
 }
 
 

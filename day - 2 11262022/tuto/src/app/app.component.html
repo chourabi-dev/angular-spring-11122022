@@ -24,9 +24,27 @@
 
 
 
-
+<!--
 <div class="feild" (mousemove)="mouseIsMoving($event)"   >
-  <div class="ball">
+  <div class="ball"   [style.left]=" x+'px' "  [style.top]=" y+'px' " >
 
   </div>
-</div>
+</div>-->
+
+
+
+
+
+<input type="text"   (keyup)="typing($event)"  >
+
+<ul>
+  <li *ngFor="let e of items; let j = index;" >
+    <p>
+      {{ e.item }} <br>
+      <small>
+        {{ e.createdAt }}
+      </small> <br>
+      <button   (click)="deleteItem(j)"  >delete</button>
+    </p>
+  </li>
+</ul>
