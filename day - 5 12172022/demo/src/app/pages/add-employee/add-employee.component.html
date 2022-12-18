@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <h1>Add new employee</h1>
+
+
+
+
+    <form [formGroup]="employeeForm"  (ngSubmit)="saveEmployee()"  >
+
+        <div class="mb-3 ">
+            <label for="">Fullname  <span  *ngIf=" employeeForm.controls.fullname.valid == false "  class="text-danger">*</span> </label>
+            <input type="text" class="form-control"   [ngClass]=" (employeeForm .controls.fullname.dirty == true) && ( employeeForm.controls.fullname.valid == false ) ? 'is-invalid':'is-valid'  "       formControlName="fullname">
+            <div *ngIf=" (employeeForm .controls.fullname.dirty == true) && ( employeeForm.controls.fullname.valid == false )"  class="invalid-feedback d-block">
+                this feild is required, must be more then 6 chars
+            </div>
+ 
+
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="">Email</label>
+            <input type="text" class="form-control" formControlName="email"  > 
+            <div *ngIf=" (employeeForm .controls.email.dirty == true) && ( employeeForm.controls.email.valid == false )"  class="invalid-feedback d-block">
+                this feild is required, must be an email
+            </div> 
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="">Department</label>
+            <select class="form-control" formControlName="department">
+                <option value="">Please choose a department</option>
+                <option [value]="d.id" *ngFor="let d of departments">{{ d.name }}</option>
+            </select>
+        </div>
+
+
+
+
+        <button type="submit" [disabled]=" ! employeeForm.valid"  class="btn btn-primary">Save employee</button>
+        
+        
+        <p>
+            {{ employeeForm.status }}
+        </p>
+
+    </form>
+
+
+
+</div>

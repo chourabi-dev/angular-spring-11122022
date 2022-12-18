@@ -1,0 +1,21 @@
+<div *ngIf="isLoading == true">
+    <h1>Loading...</h1>
+</div>
+
+<div *ngIf="hasError==true">
+    Something went wrong please try again. <br>
+    <button (click)="getData()" >try again</button>
+</div>
+
+
+<div>
+   
+    <ul>
+        <li *ngFor="let u of users">
+            <h3>{{ u.name }}</h3>
+            <p>
+                <small>{{ u.email }}</small>
+            </p>
+        </li>
+    </ul>
+</div>
