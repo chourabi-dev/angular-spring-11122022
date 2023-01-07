@@ -19,3 +19,12 @@ ng g p pipe_name
 ************* add css **************
 
 npm i bootsrap
+
+
+********************************************************
+
+JPQL
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details
+
+Joins Documentation
+https://www.baeldung.com/jpa-many-to-many
